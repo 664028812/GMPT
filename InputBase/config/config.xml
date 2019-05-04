@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--.inputpath  : 文件输入路径-->
+  <!--.outputpath  文件输出路径-->
+  <!--.queuecount     处理队列-->
+  <!--.apiqueuecount  api处理队列-->
+  <!--.endupdatakeepdays 完成文件保持天数-->
+  <!--.endupdatakeepcount  完成文件保持个数-->
+  <!--.errordatakeepdyas  错误文件保持个数-->
+  <!--.errordatakeepcount  错误文件保持个数-->
+  <pathfile>
+    <inputpath>C:\inputpath</inputpath>
+    <outputpath>C:\outpath</outputpath>
+  </pathfile>
+  <param enable="true">
+    <queuecount>500</queuecount>
+    <apiqueuecount>500</apiqueuecount>
+    <endupdatakeepdays>3</endupdatakeepdays>
+    <endupdatakeepcount>2000</endupdatakeepcount>
+    <errordatakeepdyas>3</errordatakeepdyas>
+    <errordatakeepcount>2000</errordatakeepcount>
+  </param>
+</root>
