@@ -9,6 +9,7 @@ namespace InputBase._Source.tool
 {
     public class tool
     {
+        ///
         /// <summary>
         /// 压缩文件备份路径
         /// </summary>
@@ -48,6 +49,12 @@ namespace InputBase._Source.tool
         /// <param name="filepath"></param>
         /// <returns></returns>
         public static string Createdir()
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "dir");
+            return path;
+        }
+
+        public static string ss()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "dir");
             return path;
