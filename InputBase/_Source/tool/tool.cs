@@ -18,6 +18,10 @@ namespace InputBase._Source.tool
         public static string CreateCompressPath()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"file" ,"fileback");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             return path;
         }
 
@@ -29,6 +33,10 @@ namespace InputBase._Source.tool
         public static string CreateError()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file","erroe");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             return path;
         }
 
@@ -40,6 +48,10 @@ namespace InputBase._Source.tool
         public static string CreateTemp()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "temp");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             return path;
         }
 
@@ -51,12 +63,25 @@ namespace InputBase._Source.tool
         public static string Createdir()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "dir");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             return path;
         }
 
-        public static string ss()
+
+        /// <summary>
+        /// 待用
+        /// </summary>
+        /// <returns></returns>
+        public static string CreateAsd()
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "dir");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "file", "asd");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             return path;
         }
     }

@@ -27,6 +27,8 @@ namespace InputBase._Source
         public string CompleteDir { get; set; }
         public string ErrorDir { get; set; }
 
+        public string BakDir { get; set; }
+
         protected Mutex muLock = null;
 
         protected string muName = null;
@@ -58,10 +60,10 @@ namespace InputBase._Source
         protected readonly object dealingQueueLocker = new object();
 
         //处理队列
-        private Dictionary<string, IFileBase> DealingQueue
+        private Dictionary<string, IIFileBase> DealingQueue
         {
             get;
-        } = new Dictionary<string, IFileBase>();
+        } = new Dictionary<string, IIFileBase>();
 
         public InputFile(XmlConfigPath xcp) 
         {
@@ -69,11 +71,13 @@ namespace InputBase._Source
             this.WorkDirInfo = DirInfo;
             InitCompleteDir();
             InitErrorDir();
+            InitBakDir();
+
         }
 
         protected void InitCompleteDir()
         {
-            CompleteDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Temp");
+            this.CompleteDir = Path.Combine(tool.tool.CreateTemp());
             try
             {
                 if (!Directory.Exists(CompleteDir))
@@ -87,7 +91,7 @@ namespace InputBase._Source
 
         protected void InitErrorDir()
         {
-            string ErrorDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "error");
+            this.ErrorDir = Path.Combine(tool.tool.CreateError());
             try
             {
                 if (!Directory.Exists(ErrorDir))
@@ -99,6 +103,19 @@ namespace InputBase._Source
             }
         }
 
+        protected void InitBakDir()
+        {
+            this.BakDir = Path.Combine(tool.tool.CreateAsd());
+            try
+            {
+                if (!Directory.Exists(ErrorDir))
+                    Directory.CreateDirectory(ErrorDir);
+            }
+            catch (Exception ex)
+            {
+                ILog.log.Error($"文件夹初始化失败：{ex.ToString()}");
+            }
+        }
 
        
         protected  bool MoveData(DealDataBase data)

@@ -21,7 +21,7 @@ namespace InputBase._Source
         #region   属性
 
         /// <summary>
-        /// 解压后文件保存路径
+        /// 解压后文件保存路径   解压后的工作文件夹
         /// </summary>
         public override string ComPressPath { get; set; }
         public override string Name { get; protected set; }
@@ -92,6 +92,7 @@ namespace InputBase._Source
             this.Name = inputFile.Name;
             this.fileLength = inputFile.Length;
             this.ExtWithoutDot = Path.GetFileNameWithoutExtension(inputFile.Name);
+            
 
             //拿到文件二话不说先解压
             DecompressionFile();
@@ -137,7 +138,7 @@ namespace InputBase._Source
         /// <returns></returns>
         public override bool LoadInputData(out DataStream bstm)
         {
-            bool res = true;
+            bool res = false;
             DataStream inputStream = null;
             try
             {
