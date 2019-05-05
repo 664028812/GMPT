@@ -65,8 +65,14 @@ namespace InputBase._Source
             get;
         } = new Dictionary<string, IIFileBase>();
 
-        public InputFile(XmlConfigPath xcp) 
+        
+        protected CancellationToken cancell;
+
+        protected Action<IIFileBase> OnDataIn;
+
+        public InputFile(XmlConfigPath xcp,CancellationToken ct) 
         {
+            this.cancell = ct;
             DirectoryInfo DirInfo = new DirectoryInfo(xcp.InputPath);
             this.WorkDirInfo = DirInfo;
             InitCompleteDir();
@@ -103,6 +109,7 @@ namespace InputBase._Source
             }
         }
 
+        
         protected void InitBakDir()
         {
             this.BakDir = Path.Combine(tool.tool.CreateAsd());
@@ -173,6 +180,54 @@ namespace InputBase._Source
                     continue;
                 }
                 yield return fi;
+            }
+        }
+
+        
+        ///开始入口
+        public void Start(Action<IIFileBase> onDataIn)
+        {
+
+        }
+
+
+        public void StartInputBusiness()
+        {
+            if(TaskFileScan == null)
+            {
+                TaskFileScan = new Task(FileScan,cancell,TaskCreationOptions.LongRunning);
+            }
+            TaskFileScan.Start();
+
+        }
+
+        protected void FileScan()
+        { 
+            do
+            {
+                try
+                {  
+                    foreach(KeyValuePair<object,EventArgs> evetHandler in GetDatas())
+                    {
+                        
+                    }
+                }
+                catch(Exception ex)
+                {  
+                }
+            }
+            while(true);
+        }
+
+        protected abstract IEnumerable<KeyValuePair<object,EventArgs>> GetDatas();
+
+        protected void OnDataCreated(object obj,EventArgs e)
+        {
+            try
+            {
+            }
+            catch(Exception ex)
+            {
             }
         }
     }
