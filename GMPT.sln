@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassBase", "ClassBase", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputBase", "InputBase\InputBase.csproj", "{FB35FE79-BF9E-4592-83A4-348F111098FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B895BE03-3313-460D-8B8F-CFD80675CD1F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,17 +35,12 @@ Global
 		{FB35FE79-BF9E-4592-83A4-348F111098FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB35FE79-BF9E-4592-83A4-348F111098FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB35FE79-BF9E-4592-83A4-348F111098FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B895BE03-3313-460D-8B8F-CFD80675CD1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B895BE03-3313-460D-8B8F-CFD80675CD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B895BE03-3313-460D-8B8F-CFD80675CD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B895BE03-3313-460D-8B8F-CFD80675CD1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB35FE79-BF9E-4592-83A4-348F111098FA} = {E1421954-5DF0-4234-A2A1-1E847D30E5E5}
-		{B895BE03-3313-460D-8B8F-CFD80675CD1F} = {E1421954-5DF0-4234-A2A1-1E847D30E5E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0697C270-980A-485E-838B-0E471F398D77}
